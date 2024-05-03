@@ -19,8 +19,8 @@ public class WeatherData {
             if(temperatures.get(i) < lower || temperatures.get(i) > upper){
                 temperatures.remove(i);
             }
+            i--;
         }
-        i--;
     }
 
     /**
@@ -34,5 +34,7 @@ public class WeatherData {
         /* to be implemented in part (b) */
         return 0;
     }
-
+    public String toString(){
+        return temperatures.toString();
+    }
 }

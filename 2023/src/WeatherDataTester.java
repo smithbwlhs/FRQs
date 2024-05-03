@@ -15,6 +15,9 @@ public class WeatherDataTester {
         temperatures.add(101.0);
         temperatures.add(102.5);
         WeatherData weather = new WeatherData(temperatures);
+        weather.cleanData(85.0, 120.0);
+        System.out.println(weather.toString());
+
         
     }
 }
