@@ -15,7 +15,7 @@ public class WeatherData {
     public void cleanData(double lower, double upper) {
         /* to be implemented in part (a) */ 
         int i = temperatures.size()-1;
-        while(i >= 0 ){
+        while(i >= 0){
             if(temperatures.get(i) < lower || temperatures.get(i) > upper){
                 temperatures.remove(i);
             }
@@ -32,7 +32,21 @@ public class WeatherData {
      */
     public int longestHeatWave(double threshold) {
         /* to be implemented in part (b) */
-        return 0;
+        int waveLength = 0;
+        int longestWaveLength = 0;
+
+        for(double temp: temperatures){
+            if(temp > threshold){
+                waveLength++;
+                if(waveLength>longestWaveLength){
+                    longestWaveLength = waveLength;
+                }
+            }
+            else{
+                waveLength = 0;
+            }
+        }
+        return longestWaveLength;
     }
     public String toString(){
         return temperatures.toString();
